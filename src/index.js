@@ -11,4 +11,9 @@ module.exports = function toReadable (number) {
         return rez;
     }
 
+    if(number < 100) {
+        rez = dozens[Math.trunc(number / 10) - 2] + ' ' + upToTwenty[number % 10];
+        if(number % 10 === 0) rez = dozens[Math.trunc(number / 10) - 2]
+        return rez;
+    }
 }
